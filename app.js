@@ -3,6 +3,8 @@ const app = express();
 const path = require("node:path");
 const PORT = 3000;
 
+app.use(express.urlencoded({ extended: true }));
+
 const messages = [
   {
     text: "Wagwan, mandem!",
@@ -28,12 +30,12 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Render HTML
-app.get("/", (req, res) => {
-  res.render("index", { messages: messages });
-});
-app.get("/new", (req, res) => {
-  res.render("newMsgForm");
-});
+// app.get("/", (req, res) => {
+//   res.render("index", { messages: messages });
+// });
+// app.get("/new", (req, res) => {
+//   res.render("form");
+// });
 
 // Run server
 app.listen(PORT, (error) => {

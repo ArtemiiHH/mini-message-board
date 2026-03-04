@@ -1,12 +1,11 @@
 const { Router } = require("express");
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-  res.send("Index");
-});
-
-indexRouter.post("/new", (req, res) => {
-  res.send("POST request to form");
+indexRouter.post("/", (req, res) => {
+  req.body();
+  res.send("form");
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  res.redirect("/");
 });
 
 module.exports = indexRouter;
