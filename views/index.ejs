@@ -6,14 +6,16 @@
     <title>Index</title>
   </head>
   <body>
-    <!-- <h1>Mini Message Board</h1>
+    <h1>Mini Message Board</h1>
     <section>
       <ul>
-        <% for (let i = 0; i < messages.length; i++) %>
+        <% for (let i = 0; i < messages.length; i++) { %>
         <li>
-          <a href="<%= messages.text %>"></a>
+          <a href="<%= messages[i].text %>"></a>
         </li>
+        <% } %>
       </ul>
-    </section> -->
+    </section>
+    <button>Add new message</button>
   </body>
 </html>
