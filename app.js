@@ -19,12 +19,23 @@ const messages = [
 const indexRouter = require("./routes/indexRouter");
 const newMsgRouter = require("./routes/newMsgRouter");
 
+// Set routes
 app.route("/", indexRouter);
 app.route("/new", newMsgRouter);
 
+// Set paths
 app.set("views", path.join(__dirname, "views"));
-app.set("views", "ejs");
+app.set("view engine", "ejs");
 
+// Render HTML
+app.get("/", (req, res) => {
+  res.render("index", { messages: messages });
+});
+app.get("/new", (req, res) => {
+  res.render("newMsgForm");
+});
+
+// Run server
 app.listen(PORT, (error) => {
   if (error) {
     throw Error;
