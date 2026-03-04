@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("node:path");
 const PORT = 3000;
 
 const messages = [
@@ -20,6 +21,9 @@ const newMsgRouter = require("./routes/newMsgRouter");
 
 app.route("/", indexRouter);
 app.route("/new", newMsgRouter);
+
+app.set("views", path.join(__dirname, "views"));
+app.set("views", "ejs");
 
 app.listen(PORT, (error) => {
   if (error) {
