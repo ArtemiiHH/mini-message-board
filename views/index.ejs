@@ -10,9 +10,11 @@
     <section>
       <ul>
         <% for (let i = 0; i < messages.length; i++) { %>
-        <li>
+        <li class="message">
           <%= messages[i].user %>
+          <br>
           <%= messages[i].text %>
+          <br>
           <%= messages[i].added %>
         </li>
         <% } %>
