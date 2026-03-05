@@ -16,14 +16,6 @@ app.route("/new", newMsgRouter);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Render HTML
-// app.get("/", (req, res) => {
-//   res.render("index", { messages: messages });
-// });
-// app.get("/new", (req, res) => {
-//   res.render("form");
-// });
-
 // Run server
 app.listen(PORT, (error) => {
   if (error) {

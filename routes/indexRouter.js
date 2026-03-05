@@ -15,7 +15,13 @@ const messages = [
 ];
 
 indexRouter.post("/", (req, res) => {
-  res.send("form");
+  res.render("index", { messages: messages });
+});
+
+indexRouter.post("/new", (req, res) => {
+  req.body.messageText;
+  req.body.messageUser;
+  messages.push({ text: messageText, user: messageUser });
 });
 
 module.exports = indexRouter;
