@@ -5,19 +5,6 @@ const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 
-const messages = [
-  {
-    text: "Wagwan, mandem!",
-    user: "Valera",
-    added: new Date(),
-  },
-  {
-    text: "Zdarova zaebal!",
-    user: "Andrey",
-    added: new Date(),
-  },
-];
-
 const indexRouter = require("./routes/indexRouter");
 const newMsgRouter = require("./routes/newMsgRouter");
 
