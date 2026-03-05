@@ -1,22 +1,27 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
-const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 
 const indexRouter = require("./routes/indexRouter");
-const newMsgRouter = require("./routes/newMsgRouter");
 
-// Set routes
-app.route("/", indexRouter);
-app.route("/new", newMsgRouter);
+app.use("/", indexRouter);
+app.use("/new", indexRouter);
+
+app.get("/", (req, res) => {
+  res.render("index");
+});
+app.get("/new", (req, res) => {
+  res.send("form");
+});
 
 // Set paths
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Run server
+const PORT = 3000;
 app.listen(PORT, (error) => {
   if (error) {
     throw Error;
