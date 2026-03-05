@@ -4,17 +4,9 @@ const path = require("node:path");
 
 app.use(express.urlencoded({ extended: true }));
 
-const indexRouter = require("./routes/indexRouter");
+const index = require("./routes/index");
 
-app.use("/", indexRouter);
-app.use("/new", indexRouter);
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get("/new", (req, res) => {
-  res.send("form");
-});
+app.use("/", index);
 
 // Set paths
 app.set("views", path.join(__dirname, "views"));
